@@ -1,9 +1,9 @@
 """docstring here."""
-from scrapy.contrib.loader.processor import Join
-from scrapy.contrib.loader.processor import MapCompose
-from scrapy.contrib.loader import XPathItemLoader
-from scrapy.selector import HtmlXPathSelector
-from scrapy.spider import Spider
+from scrapy.loader import ItemLoader
+from scrapy.loader.processors import Join
+from scrapy.loader.processors import MapCompose
+from scrapy import Selector
+from scrapy.spiders import Spider
 
 from archi_scraper.items import ArchiItem
 
@@ -24,10 +24,10 @@ class ArchiSpider(Spider):
 
     def parse(self, response):
         """docstring here."""
-        selector = HtmlXPathSelector(response)
+        selector = Selector(response)
 
-        for archi in selector.select(self.archi_xpath):
-            loader = XPathItemLoader(ArchiItem, selector=archi)
+        for archi in selector.xpath(self.archi_xpath):
+            loader = ItemLoader(ArchiItem(), selector=archi)
             loader.default_input_processor = MapCompose(unicode.strip)
             loader.default_output_processor = Join()
 
