@@ -1,12 +1,16 @@
-from scrapy.spider import Spider
-from scrapy.selector import HtmlXPathSelector
+"""docstring here."""
+from scrapy.contrib.loader.processor import Join
+from scrapy.contrib.loader.processor import MapCompose
 from scrapy.contrib.loader import XPathItemLoader
-from scrapy.contrib.loader.processor import Join, MapCompose
+from scrapy.selector import HtmlXPathSelector
+from scrapy.spider import Spider
 
 from archi_scraper.items import ArchiItem
 
 
 class ArchiSpider(Spider):
+    """docstring here."""
+
     name = 'archi_spider'
     allowed_domains = ['ordinearchitetti.mi.it']
     start_urls = ['http://www.ordinearchitetti.mi.it/it/ordine/albo']
@@ -19,6 +23,7 @@ class ArchiSpider(Spider):
     }
 
     def parse(self, response):
+        """docstring here."""
         selector = HtmlXPathSelector(response)
 
         for archi in selector.select(self.archi_xpath):
