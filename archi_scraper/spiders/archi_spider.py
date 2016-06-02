@@ -28,9 +28,10 @@ class ArchiSpider(Spider):
 
         for archi in selector.xpath(self.archi_xpath):
             loader = ItemLoader(ArchiItem(), selector=archi)
-            loader.default_input_processor = MapCompose(unicode.strip)
+            loader.default_input_processor = MapCompose(unicode.strip, unicode.upper)
             loader.default_output_processor = Join()
 
             for field, xpath in self.item_fields.iteritems():
                 loader.add_xpath(field, xpath)
+
             yield loader.load_item()

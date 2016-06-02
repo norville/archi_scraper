@@ -6,3 +6,4 @@
 /Users/bassa/GitHub/archi_scraper/archi_scraper/spiders/__init__.pyc
 /Users/bassa/GitHub/archi_scraper/archi_scraper/spiders/archi_spider.pyc
 /Users/bassa/GitHub/archi_scraper/.scrapy/
+*.pyc

@@ -23,6 +23,9 @@ class AlboToCSVPipeline(object):
         print(item['name'])
         print(item['sid'])
         print(item['address'])
+
+        # full_address = item['address']
+        #
         # self.albo_csv.writerow([
         #     item['surname'],
         #     item['name'],

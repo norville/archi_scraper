@@ -10,5 +10,3 @@ class ArchiItem(Item):
     surname = Field()
     sid = Field()
     address = Field()
-    zip_code = Field()
-    city = Field()
