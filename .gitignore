@@ -1,3 +1,2 @@
-/Users/bassa/GitHub/archi_scraper/albo.csv
-/Users/bassa/GitHub/archi_scraper/.scrapy/
-*.pyc
+albo.csv
+.scrapy

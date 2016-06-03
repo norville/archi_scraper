@@ -2,6 +2,7 @@
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import Join
 from scrapy.loader.processors import MapCompose
+from scrapy import Request
 from scrapy import Selector
 from scrapy.spiders import Spider
 
@@ -23,6 +24,17 @@ class ArchiSpider(Spider):
     }
 
     def parse(self, response):
+        """docstring here."""
+        base_url = response.url
+
+        for page in range(1, 1211):
+            if page > 1:
+                url = base_url + '/' + str(page)
+            else:
+                url = base_url
+            yield Request(url, callback=self.parse_page)
+
+    def parse_page(self, response):
         """docstring here."""
         selector = Selector(response)
 

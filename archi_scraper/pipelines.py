@@ -1,5 +1,7 @@
 """docstring here."""
 import csv
+# import re
+# import string
 
 
 class AlboToCSVPipeline(object):
@@ -19,19 +21,21 @@ class AlboToCSVPipeline(object):
 
     def process_item(self, item, spider):
         """docstring here."""
-        print(item['surname'])
-        print(item['name'])
-        print(item['sid'])
-        print(item['address'])
+        # full_address = string.split(item['address'], ' ', 1)
+        # zip_code = full_address[0]
+        # city = string.split(full_address[1], ' - ')[0]
+        # street = string.split(full_address[1], ' - ')[1]
+        # street = re.sub(r',', '', street)
+        # street = re.sub(r'V\.', 'VIA', street)
+        # street = re.sub(r'P\.ZZA', 'PIAZZA', street)
 
-        # full_address = item['address']
-        #
-        # self.albo_csv.writerow([
-        #     item['surname'],
-        #     item['name'],
-        #     item['sid'],
-        #     item['address'],
-        #     item['zip_code'],
-        #     item['city']
-        # ])
+        self.albo_csv.writerow([
+            item['surname'],
+            item['name'],
+            item['sid'],
+            item['address']
+            # street,
+            # zip_code,
+            # city
+        ])
         return item
