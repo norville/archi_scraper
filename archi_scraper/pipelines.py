@@ -32,5 +32,5 @@ class AlboToCSVPipeline(object):
             else:
                 archi.append('?')
 
-        self.albo_csv.writerow(archi)
+        self.albo_csv.writerow(archi.encode('utf-8'))
         return item
