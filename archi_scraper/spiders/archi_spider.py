@@ -42,8 +42,8 @@ class ArchiSpider(Spider):
             loader = ItemLoader(ArchiItem(), selector=archi)
             loader.default_input_processor = MapCompose(
                 unicode.strip,
-                unicode.strip('"'),
-                unicode.replace(',', ''),
+                str.strip('"'),
+                str.replace(',', ''),
                 unicode.upper
             )
             loader.default_output_processor = Join()
