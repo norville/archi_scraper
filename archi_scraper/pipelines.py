@@ -16,7 +16,7 @@ class AlboToCSVPipeline(object):
             'INDIRIZZO'
         ])
 
-    def normalize_field(value):
+    def normalize_field(self, value):
         """docstring here."""
         value.strip('"'),
         re.sub(',', '', value)
@@ -30,7 +30,7 @@ class AlboToCSVPipeline(object):
             if field in item:
                 archi.append(self.normalize_field(item[field]))
             else:
-                archi.append('')
+                archi.append('?')
 
         self.albo_csv.writerow(archi)
         return item
