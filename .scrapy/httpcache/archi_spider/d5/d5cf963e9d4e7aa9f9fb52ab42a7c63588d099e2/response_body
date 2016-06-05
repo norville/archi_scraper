@@ -1,8 +1,0 @@
-# www.robotstxt.org/
-# www.google.com/support/webmasters/bin/answer.py?hl=en&answer=156449
-
-User-agent: *
-Disallow: /it/ordine/albo/scheda/-90222706
-Disallow: /en/ordine/albo/scheda/-90222706
-Disallow: /it/ordine/albo/scheda/-90222706-alberto-mario-giovanni-saruggia
-Disallow: /en/ordine/albo/scheda/-90222706-alberto-mario-giovanni-saruggia
