@@ -20,7 +20,7 @@ class AlboToCSVPipeline(object):
         """docstring here."""
         value.strip('"'),
         re.sub(',', '', value)
-        return value
+        return value.encode('utf-8')
 
     def process_item(self, item, spider):
         """docstring here."""
@@ -32,5 +32,5 @@ class AlboToCSVPipeline(object):
             else:
                 archi.append('?')
 
-        self.albo_csv.writerow(archi.encode('utf-8'))
+        self.albo_csv.writerow(archi)
         return item
