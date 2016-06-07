@@ -1,5 +1,5 @@
 """docstring here."""
-from ArchiSpider import ArchiSpider
+from archi_scraper.spiders.archi_spider import ArchiSpider
 import logging
 from scrapy.crawler import CrawlerProcess
 from scrapy.settings import Settings

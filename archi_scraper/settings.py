@@ -7,7 +7,7 @@ NEWSPIDER_MODULE = 'archi_scraper.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the
 # user-agent
-USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.1 Safari/537.36'
+USER_AGENT = 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -82,4 +82,4 @@ HTTPCACHE_IGNORE_HTTP_CODES = []
 HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 # Set log file
-LOG_FILE = 'archi_spider.log'
+LOG_FILE = 'archi_scraper.log'
